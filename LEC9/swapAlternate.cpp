@@ -11,8 +11,8 @@ void printArray(int arr[],int size){
 void swapAlternate(int a[],int size){
 
     for(int i=0;i<size;i+=2){
-        int start=0;
-        if((start+1)<size){
+        
+        if((i+1)<size){
             swap(a[i],a[i+1]);
 
         }
