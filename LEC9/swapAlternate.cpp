@@ -27,8 +27,8 @@ void swapAlternate(int a[],int size){
 
 int main()
     {
-    int brr[5]={2,6,3,9,4};
-    swapAlternate(brr,5);
-    printArray(brr,5);
+    int brr[6]={2,6,3,9,4,8};
+    swapAlternate(brr,6);
+    printArray(brr,6);
 
 }
