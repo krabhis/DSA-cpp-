@@ -25,9 +25,12 @@ int binarySearch(int a[], int size, int key) {
 }
 
 int main() {
-  int arr[7] = {10, 20, 30, 40, 90, 100, 204};
-  int atIndex = binarySearch(arr, 7, 100);
+  int arr[5] = {7,8,1,3,5};
+  int atIndex = binarySearch(arr, 5, 1);
   cout << "key is at index ---> " << atIndex << endl;
 
   return 0;
 }
+
+
+
