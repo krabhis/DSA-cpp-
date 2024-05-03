@@ -82,3 +82,54 @@ public:
         }
         
        } ;
+
+
+
+
+
+
+       // class Solution {
+// public:
+//     vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+//         int i=0;
+//         int n=nums.size();
+//         vector<int>count(n);
+//         int cnt=0;
+
+//         while(i<n){
+//             int j=i+1;
+//             while(j<n){
+//                 if(nums[i]>nums[j]){
+//                     cnt++;
+//                 }
+//             j++;
+//             }
+//         count[i]=cnt;
+//         }
+//     return count;
+//     }
+// };
+
+class Solution {
+public:
+    vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> count(n);
+        int cnt = 0; // Move cnt outside the outer loop
+
+        for (int i = 0; i < n; i++) {
+            cnt = 0; // Reset cnt for each element
+            for (int j = i + 1; j < n; j++) {
+                if (nums[i]> nums[j]) {
+                    cnt++;
+                }
+                else if(nums[i]==nums[j]){
+                    cnt=1;
+                }
+            }
+            count[i] = cnt;
+        }
+
+        return count;
+    }
+};
