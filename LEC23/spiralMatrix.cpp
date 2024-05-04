@@ -60,12 +60,12 @@ public:
 //increments are there for two reason --
 // 1. that same element doesnt get printed
 // 2. to tackle next ro w and col
-// count ++ is in side for loop and and it will be incremented each time when for loop executes 
+// count ++ is in side for loop and and it will be incremented each time when for loop executes. 
 
 
 
 
 
 
-   
-    
+
+  
