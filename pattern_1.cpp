@@ -361,81 +361,106 @@
     // }
 
 
-#include <iostream>
+// #include <iostream>
 
+// using namespace std;
+
+// int main() {
+//     int rows;
+
+//     cout << "Enter the number of rows: ";
+//     cin >> rows;
+
+//     // Right triangle with asterisks
+//     for (int i = 1; i <= rows; i++) {
+//         for (int j = 1; j <= i; j++) {
+//             cout << "*";
+//         }
+//         cout << endl;
+//     }
+
+//     // Inverted right triangle with asterisks
+//     for (int i = rows; i >= 1; i--) {
+//         for (int j = 1; j <= i; j++) {
+//             cout << "*";
+//         }
+//         cout << endl;
+//     }
+
+//     // Right triangle with numbers in ascending order (starting from 1)
+//     for (int i = 1; i <= rows; i++) {
+//         for (int j = 1; j <= i; j++) {
+//             cout << j;
+//         }
+//         cout << endl;
+//     }
+
+//     // Right triangle with numbers in descending order (starting from the number of rows)
+//     for (int i = rows; i >= 1; i--) {
+//         for (int j = 1; j <= i; j++) {
+//             cout << rows - j + 1;
+//         }
+//         cout << endl;
+//     }
+
+//     // Right triangle with consecutive numbers (starting from 1)
+//     int count = 1;
+//     for (int i = 1; i <= rows; i++) {
+//         for (int j = 1; j <= i; j++) {
+//             cout << count << " ";
+//             count++;
+//         }
+//         cout << endl;
+//     }
+
+//     // Right triangle with characters in ascending order (starting from 'A')
+//     for (int i = 1; i <= rows; i++) {
+//         for (int j = 1; j <= i; j++) {
+//             cout << char('A' + j - 1) << " ";  // Convert ASCII value to character
+//         }
+//         cout << endl;
+//     }
+
+//     // Right triangle with spaces and asterisks (pyramid with base at top)
+//     for (int i = rows; i >= 1; i--) {
+//         int space = rows - i;
+//         while (space > 0) {
+//             cout << " ";
+//             space--;
+//         }
+
+//         for (int j = 1; j <= 2 * i - 1; j++) {
+//             cout << "*";
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+
+
+#include<iostream>
 using namespace std;
-
-int main() {
-    int rows;
-
-    cout << "Enter the number of rows: ";
-    cin >> rows;
-
-    // Right triangle with asterisks
-    for (int i = 1; i <= rows; i++) {
-        for (int j = 1; j <= i; j++) {
-            cout << "*";
+int main(){
+    for(int i=0;i<5;i++){
+        for(int j=0;j<i;j++){
+            cout<<"*";
         }
-        cout << endl;
+        cout<<endl;
+
     }
 
-    // Inverted right triangle with asterisks
-    for (int i = rows; i >= 1; i--) {
-        for (int j = 1; j <= i; j++) {
-            cout << "*";
-        }
-        cout << endl;
+
+
+    for(int i=0;i<4;i++){
+        while(int)
+
+
+  
     }
-
-    // Right triangle with numbers in ascending order (starting from 1)
-    for (int i = 1; i <= rows; i++) {
-        for (int j = 1; j <= i; j++) {
-            cout << j;
-        }
-        cout << endl;
-    }
-
-    // Right triangle with numbers in descending order (starting from the number of rows)
-    for (int i = rows; i >= 1; i--) {
-        for (int j = 1; j <= i; j++) {
-            cout << rows - j + 1;
-        }
-        cout << endl;
-    }
-
-    // Right triangle with consecutive numbers (starting from 1)
-    int count = 1;
-    for (int i = 1; i <= rows; i++) {
-        for (int j = 1; j <= i; j++) {
-            cout << count << " ";
-            count++;
-        }
-        cout << endl;
-    }
-
-    // Right triangle with characters in ascending order (starting from 'A')
-    for (int i = 1; i <= rows; i++) {
-        for (int j = 1; j <= i; j++) {
-            cout << char('A' + j - 1) << " ";  // Convert ASCII value to character
-        }
-        cout << endl;
-    }
-
-    // Right triangle with spaces and asterisks (pyramid with base at top)
-    for (int i = rows; i >= 1; i--) {
-        int space = rows - i;
-        while (space > 0) {
-            cout << " ";
-            space--;
-        }
-
-        for (int j = 1; j <= 2 * i - 1; j++) {
-            cout << "*";
-        }
-        cout << endl;
-    }
-
-    return 0;
 }
+
+
 
 // //////+++++++++++++++FOR ME ABOVE QUESTION IS GOOD TRY IT ONCE DURING PRACTICE++++++++++++++++++++++++++==
