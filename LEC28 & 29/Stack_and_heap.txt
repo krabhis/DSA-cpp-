@@ -1,0 +1,53 @@
+It is not correct to say that stack memory is formed only at compile time and heap memory is formed at compile time. The allocation of stack and heap memory happens at different times during the execution of a program.
+
+Stack Memory
+Characteristics:
+
+Runtime Allocation: Stack memory is allocated at runtime when functions are called. Each function call creates a new stack frame, which contains local variables, function parameters, and return addresses.
+
+LIFO Structure: The stack follows a Last-In-First-Out (LIFO) structure, meaning the last function called is the first to return. This structure helps manage the function call order and local variables' lifetimes.
+
+Automatic Management: Memory allocation and deallocation for the stack are handled automatically. When a function returns, its stack frame is popped off the stack, and the memory is reclaimed.
+
+Limited Size: Stack memory is typically limited in size and can lead to stack overflow if too much memory is used (e.g., deep recursion).
+
+Example:
+
+cpp
+Copy code
+void function() {
+    int localVariable; // Allocated on the stack at runtime
+    // ... function code ...
+} // localVariable is automatically deallocated when the function returns
+
+
+Heap Memory
+Characteristics:
+
+Runtime Allocation: Heap memory is also allocated at runtime, but unlike stack memory, it must be managed manually by the programmer using functions like malloc, free (in C), or new, delete (in C++).
+
+Dynamic Size: The heap can grow and shrink dynamically during program execution, allowing for flexible memory management. It is suitable for data structures whose size cannot be determined at compile time, such as dynamic arrays and linked lists.
+
+Manual Management: The programmer is responsible for allocating and deallocating heap memory. Failure to do so correctly can lead to memory leaks (if memory is not freed) or dangling pointers (if memory is accessed after being freed).
+
+Larger Size: Heap memory is generally larger than stack memory and can accommodate more extensive and complex data structures.
+
+Example:
+
+cpp
+Copy code
+void function() {
+    int* heapVariable = new int; // Allocated on the heap at runtime
+    // ... use heapVariable ...
+    delete heapVariable; // Manually deallocate memory
+}
+Summary
+Stack memory is allocated and deallocated automatically at runtime as functions are called and return. It is used for local variables and function call management.
+Heap memory is allocated and deallocated manually at runtime, providing dynamic memory management for data structures whose size can change.
+Both stack and heap memory allocations happen at runtime, not at compile time. Compile time involves the creation of the program's binary, where memory layouts and sizes of static/global variables and the program's code are determined, but actual memory allocation for stack and heap happens during the execution of the program.
+
+
+
+
+
+
