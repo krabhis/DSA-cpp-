@@ -26,7 +26,13 @@ public:
         this->level = level;
     }
 
-   
+   //copy constructor
+
+   Hero(Hero&temp){
+    cout<<"Copy construcor called"<<endl;
+    this->health=temp.health;
+    this->level=temp.level;
+   }
 
     void print() {
         cout << "Health: " << this->health << endl;
@@ -59,3 +65,8 @@ int main() {
 
     return 0;
 }
+
+
+/*Constructors in C++ are essential for initializing objects. While the compiler provides a default constructor if none is defined, you often need parameterized constructors to initialize objects with specific values. The this keyword is crucial in constructors to avoid ambiguity and to refer to the current object's fields and methods.
+
+*/

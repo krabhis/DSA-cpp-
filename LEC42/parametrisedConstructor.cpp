@@ -46,6 +46,7 @@ class Hero{
 
 int main() {
     Hero ramesh(10);
+    cout<<ramesh.getHealth()<<endl;
     cout<<"address of ramesh=>"<<&ramesh;
 
   
