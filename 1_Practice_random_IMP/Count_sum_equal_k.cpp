@@ -2,7 +2,7 @@
 using namespace std;
 
 // Function to solve the subset sum problem
-int solve(int arr[], int n, int index, int s, int sum) {
+int solve(int arr[], int n, int index, int s, int sum){
     // Base case: when index reaches the size of the array
     if (index == n) {
         // If the current sum equals the target sum, increment the count
