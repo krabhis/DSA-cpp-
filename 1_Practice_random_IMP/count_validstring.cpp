@@ -39,7 +39,7 @@ public:
 
             // Shrink the window if it matches the frequency of word2
             while(valid_str(v, c)) {
-                count += (word1.size() - end); // Add valid substrings
+                count += (word1.size() - end); // Add valid substrings that word 2 is present in ()
                 char start_char = word1[start];
                 v[start_char - 'a']--; // Remove the start character from the window
                 start++;  // Move start pointer to the right
