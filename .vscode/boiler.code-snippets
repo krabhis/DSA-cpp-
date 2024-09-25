@@ -1,0 +1,16 @@
+{
+    "boiler": {
+        "prefix": "hello",
+        "body": [
+            "#include <bits/stdc++.h>",
+            "",
+            "using namespace std;",
+            "",
+            "int main() {",
+            "\tcout << \"Love you Zindagi\" << endl;",
+            "\treturn 0;",
+            "}"
+        ],
+        "description": "Prints Hello, World! in C++"
+    }
+}

@@ -66,7 +66,7 @@ class Solution{
         }
         
         
-        visited[x][y]=0;
+        visited[x][y]=0;   // for backtracking
 
     }
     public:

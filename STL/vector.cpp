@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 
+
 void explainVector(){
 
     vector<int>v;
@@ -9,7 +10,9 @@ void explainVector(){
 
     vector<pair<int , int>>vec;
 
-    v.push_back{(1,2)};
+    v.push_back({1,2});
+    // or  vec.push_back(make_pair(1, 2);
+    // orvec.push_back({1, 2});
     v.emplace_back(1,2);
 
     vector<int> v(5,100);

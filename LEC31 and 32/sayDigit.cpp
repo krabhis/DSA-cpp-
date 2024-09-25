@@ -3,12 +3,12 @@ using namespace std;
 
 void sayDigit(int n, string arr[10]){
     if(n==0){
-        return ;
+        return;
     }
     int digit=n%10;
     n=n/10;
     sayDigit(n,arr);
-    cout<<arr[digit]<<" ";
+    cout<<arr[digit]<<"";
 
 }
 
