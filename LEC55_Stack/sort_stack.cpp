@@ -11,7 +11,7 @@ void  insertSorted(stack<int>&stack, int num){
 		insertSorted(stack, num);
 
 	     stack.push(top);
-
+ 
 }
 void sortStack(stack<int> &stack)
 {
