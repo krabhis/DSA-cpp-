@@ -106,10 +106,12 @@ int main() {
 
 
 
-
-
+/*This is not space efficient as the  the size of stack in fixed to 3 if we wnt to push  4 element in stack 2 we cannot push yet the stack has spacee ,thats why we use optimised approach 
+Instead of pre-allocating fixed-sized partitions for each stack (which wastes space when some stacks are underutilized), we can implement a Dynamic Multi-Stack using one array for the data and an auxiliary array for tracking the next available positions in the array.
+*/
 
 
     cout << "Love you Zindagi" << endl;
     return 0;
 }
+

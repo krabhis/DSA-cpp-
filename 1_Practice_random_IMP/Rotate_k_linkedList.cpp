@@ -22,7 +22,7 @@ public:
             temp = temp->next;
         }
 
-        k = k % length;
+        // k = k % length;
         if (k == 0) {
             return head;  
         }
