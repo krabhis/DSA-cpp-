@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// Node class for linked list
 class Node {
 public:
     int data;
@@ -12,6 +13,7 @@ public:
     }
 };
 
+// LinkedList class
 class LinkedList {
 public:
     Node* head;
@@ -20,6 +22,7 @@ public:
         head = nullptr;
     }
 
+    // Insert a new node at the end
     void insert(int value) {
         Node* newNode = new Node(value);
         if (head == nullptr) {
@@ -33,23 +36,7 @@ public:
         }
     }
 
-    void removeDuplicates() {
-        unordered_set<int> seen;
-        Node* current = head;
-        Node* prev = nullptr;
-
-        while (current != nullptr) {
-            if (seen.find(current->data) != seen.end()) {
-                prev->next = current->next;
-                delete current;
-            } else {
-                seen.insert(current->data);
-                prev = current;
-            }
-            current = prev->next;
-        }
-    }
-
+    // Print the linked list
     void printList() {
         Node* temp = head;
         while (temp != nullptr) {
@@ -60,20 +47,82 @@ public:
     }
 };
 
+Node* mergeTwoLists(Node* l1, Node* l2) {
+    if (!l1) return l2;
+    if (!l2) return l1;
+
+    Node* result = nullptr;
+    if (l1->data < l2->data) {
+        result = l1;
+        result->next = mergeTwoLists(l1->next, l2);
+    } 
+    else {
+        result = l2;
+        result->next = mergeTwoLists(l1, l2->next);
+    }
+    return result;
+}
+
+Node* mergeKLists(vector<LinkedList>& lists, int start, int end) {
+    if (start == end) {
+        return lists[start].head;
+    }
+    if (start < end) {
+        int mid = start + (end - start) / 2;
+        Node* left = mergeKLists(lists, start, mid);
+        Node* right = mergeKLists(lists, mid + 1, end);
+        return mergeTwoLists(left, right);
+    }
+    return nullptr;
+}
+
 int main() {
-    int N;
-    cin >> N;
+    int n, k;
 
-    LinkedList list;//static object
+    cout << "Enter the size of the array (n): ";
+    cin >> n;
 
-    for (int i = 0; i < N; i++) {
-        int picID;
-        cin >> picID;
-        list.insert(picID);
+    cout << "Enter the number of linked lists (k): ";
+    cin >> k;
+
+    if (k > n) {
+        cout << "Error: Number of linked lists (k) cannot exceed array size (n)." << endl;
+        return 1;
     }
 
-    list.removeDuplicates();
-    list.printList();
+    vector<LinkedList> linkedLists(k);
+
+    for (int i = 0; i < k; i++) {
+        int numNodes;
+        cout << "Enter the number of nodes in linked list " << i + 1 << ": ";
+        cin >> numNodes;
+
+        for (int j = 0; j < numNodes; j++) {
+            int val;
+            cout << "Enter value for node " << j + 1 << ": ";
+            cin >> val;
+            linkedLists[i].insert(val);
+        }
+    }
+
+    // Display all linked lists
+    cout << "\nDisplaying all linked lists:" << endl;
+    for (int i = 0; i < k; i++) {
+        cout << "Linked list " << i + 1 << ": ";
+        linkedLists[i].printList();
+    }
+
+    // Merge k linked lists
+    Node* mergedHead = mergeKLists(linkedLists, 0, k - 1);
+
+    // Display merged linked list
+    cout << "\nMerged linked list:" << endl;
+    Node* temp = mergedHead;
+    while (temp != nullptr) {
+        cout << temp->data << " ";
+        temp = temp->next;
+    }
+    cout << endl;
 
     return 0;
 }

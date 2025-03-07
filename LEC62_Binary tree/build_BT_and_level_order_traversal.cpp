@@ -31,36 +31,28 @@ node* buildTree(node* root) {
 }
 
 void levelOrderTraversal(node* root) {
-    if (root == NULL) return;
+    if (root == nullptr) return;
 
     queue<node*> q;
     q.push(root);
-    q.push(NULL);
 
     while (!q.empty()) {
-        node* temp = q.front();
-        q.pop();
+        int levelSize = q.size(); // Number of nodes at the current level
 
-        if (temp == NULL) {
-            //purana level complete traverse ho
-            cout << endl;
-            if (!q.empty()) {
-                q.push(NULL);
-            }
+        for (int i = 0; i < levelSize; i++) {
+            node* temp = q.front();
+            q.pop();
 
+            cout << temp->data << " "; // Print current node
+
+            if (temp->left) q.push(temp->left);
+            if (temp->right) q.push(temp->right);
         }
-         else {
-            cout << temp->data << " ";
 
-            if (temp->left) {
-                q.push(temp->left);
-            }
-            if (temp->right) {
-                q.push(temp->right);
-            }
-        }
+        cout << endl; // Move to the next level
     }
 }
+
 
 int main() {
     node* root = NULL;
@@ -70,7 +62,7 @@ int main() {
     
     // Example input: 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1 
     // Performing level order traversal
-    cout << "Level Order Traversal:" << endl;
+    // cout << "Level Order Traversal:" << endl;
     levelOrderTraversal(root);
 
     return 0;

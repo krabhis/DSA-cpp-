@@ -1,9 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
-
-
-
-
 int main() {
     vector<int>arr={4,3,2,1};
     vector<int>result;

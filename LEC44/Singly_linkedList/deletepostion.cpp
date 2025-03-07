@@ -123,14 +123,14 @@ int main() {
     Node* tail=node1;
     print(head);
 
-    insertionAtend(tail,45);
-    print(head);
+    // insertionAtend(tail,45);
+    // print(head);
 
-    insertionAtend(tail,50);
-    print(head);
+    // insertionAtend(tail,50);
+    // print(head);
 
-    deleteNode(1,head);
-    print(head);
+    // deleteNode(1,head);
+    // print(head);
 
 
 
